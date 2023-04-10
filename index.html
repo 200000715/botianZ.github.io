@@ -98,16 +98,54 @@
 
   <script>
     let minute_div = document.getElementById("minute");
-    let time = new Date();
-    minute_div.innerText = time;
+
+    minute_div.innerText = get_date();
     let display_btn = document.getElementById("display_btn");
     let if_show = false;
     display_btn.onclick = function () {
-      time = new Date();
-      minute_div.innerText = time;
+      minute_div.innerText = get_date();
       minute_div.style.display = if_show ? null : "none";
       display_btn.innerText = if_show ? "Hidden" : "Display";
       if_show = !if_show;
     };
+
+    function get_date() {
+      var now = new Date();
+      var minutes = now.getMinutes();
+
+      // 如果分钟数小于 10，则在前面添加一个 0
+
+      if (minutes < 10) {
+        minutes = "0" + minutes;
+      }
+
+      // 获取当前小时数
+
+      var hours = now.getHours();
+
+      // 如果小时数小于 10，则在前面添加一个 0
+
+      if (hours < 10) {
+        hours = "0" + hours;
+      }
+
+      // 获取当前日期
+
+      var date = now.getDate();
+
+      // 获取当前月份
+
+      var month = now.getMonth() + 1;
+      // 获取当前年份
+
+      var year = now.getFullYear();
+
+      // 将日期和时间格式化为字符串
+
+      var datetime =
+        year + "-" + month + "-" + date + " " + hours + ":" + minutes;
+
+      return datetime;
+    }
   </script>
 </html>
