@@ -103,6 +103,8 @@
     let display_btn = document.getElementById("display_btn");
     let if_show = false;
     display_btn.onclick = function () {
+      time = new Date();
+      minute_div.innerText = time;
       minute_div.style.display = if_show ? null : "none";
       display_btn.innerText = if_show ? "Hidden" : "Display";
       if_show = !if_show;
