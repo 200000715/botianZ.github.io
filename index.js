@@ -184,3 +184,26 @@ function get_array() {
 // 获得网页这个按钮
 const array_btn = document.getElementById("array_btn");
 array_btn.addEventListener("click", get_array);
+
+// cat's voice play
+
+let play = true;
+let image_id = undefined;
+const sound = new Howl({
+  src: ["./audio/cat-meow-6226.mp3"], // 您的音频文件路径
+  autoplay: false, // 如果设置为 true，音频将在加载完成后自动播放
+  loop: false, // 如果设置为 true，音频将循环播放
+  volume: 1, // 音量大小，范围为 0.0 到 1.0
+});
+document.querySelectorAll(".cats").forEach((item, index) => {
+  item.addEventListener("click", (event) => {
+    // 如果点击的是同一张图片,则点击播放,再点击暂停.
+    console.log("sound.playing()==>", sound.playing());
+    if (sound.playing()) {
+      sound.pause();
+    } else {
+      sound.play();
+    }
+    play = !play;
+  });
+});

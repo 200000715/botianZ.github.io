@@ -37,6 +37,8 @@
       integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
       crossorigin=""
     ></script>
+    <!-- 引入 Howler.js 库 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
   </head>
   <body class="container" onload="mapLoad()">
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
@@ -231,11 +233,15 @@
       </button>
     </main>
 
-    <img src="./imgs/cat1.jfif" class="img-fluid" alt="..." />
-    <img src="./imgs/cat2.jfif" class="img-fluid" alt="..." />
-    <img src="./imgs/cat3.jfif" class="img-fluid" alt="..." />
-    <img src="./imgs/cat4.jfif" class="img-fluid" alt="..." />
-    <img src="./imgs/cat5.jfif" class="img-fluid" alt="..." />
+
+    <div  class="fs-1">
+      Click imgs to play the cat's voice
+    </div>
+    <img src="./imgs/cat1.jfif" class="img-fluid cats"  alt="..." />
+    <img src="./imgs/cat2.jfif" class="img-fluid cats" alt="..." />
+    <img src="./imgs/cat3.jfif" class="img-fluid cats" alt="..." />
+    <img src="./imgs/cat4.jfif" class="img-fluid cats" alt="..." />
+    <img src="./imgs/cat5.jfif" class="img-fluid cats" alt="..." />
 
     <div class="container mt-3">
       <h1>Map API Example</h1>
