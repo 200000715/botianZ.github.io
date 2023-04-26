@@ -151,7 +151,9 @@ function add_wiki() {
           resultsHtml += `
           <div class="card mb-3">
             <div class="card-body">
-              <h5 class="card-title">${data.query.pages[i].title}</h5>
+              <h5 class="card-title"><a target="_blank" href="${
+                "https://en.wikipedia.org/wiki/" + data.query.pages[i].title
+              }"> ${data.query.pages[i].title} </a> </h5>
               
             </div>
           </div>
