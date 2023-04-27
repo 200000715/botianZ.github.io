@@ -3,23 +3,23 @@
 
 document.addEventListener("DOMContentLoaded", () => {
   // Use .getElementsByClassName() to get an HTMLCollection of all .animalTitle elements.
-  let animal_collection = document.getElementsByClassName("howlerImage");
-  console.log("animal_collection==>", animal_collection);
-  // Create a new Object with properties and values like 'animal01: "Cow" '.
+  let animal_collection = document.getElementsByClassName("animalTitle");
+  let animal_objects = {};
+  let index = 1;
+  for (let item of animal_collection) {
+    // animal_objects[item] = animal_collection[item].textContent;
+    animal_objects["animal0" + index] = item.textContent;
+    index = index + 1;
+  } // Create a new Object with properties and values like 'animal01: "Cow" '.
   // These values can be found in the HTMLCollection.
-  let animal_objects = {
-    animal01: "Cow",
-    animal02: "Duck",
-    animal03: "Horse",
-    animal04: "Fox",
-  };
 
   // Use the Object to create event listeners for <img> elements that launch the provided howler script.
   // Write a single 'for...in' statement to add listeners to all the <img> elements.
   // .addEventListener('click', () => {CODE GOES HERE}
   // The animal title (e.g. 'Cow') determines which sprite is played.
-  for (let animal of animal_collection) {
-    console.log("animal==>", animal);
+  for (let item in animal_objects) {
+    let animal = document.getElementById(item);
+
     animal.addEventListener("click", (event) => {
       let id = event.target.id;
       playAnimal(animal_objects[id]);
